@@ -52,10 +52,9 @@ class magazijn {
                 }
             } else {
                 std::cout << "\nEr word nu een aanvraag gedaan aan de magazijnLader voor willekeurige data\n";
-                magazijnLadingObj.willekeurig(containerLocaties);
-                while (!magazijnHerindelerObj.isHerindeelbaar(containerLocaties)) {
-                    std::cout << "\n Deze puzzel is niet op te lossen, haal nieuwe op" << std::endl;
+                while (true) {
                     magazijnLadingObj.willekeurig(containerLocaties);
+                    if (magazijnHerindelerObj.isHerindeelbaar(containerLocaties)) break;
                 }
             }
 
